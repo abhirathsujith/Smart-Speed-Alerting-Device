@@ -13,6 +13,7 @@ float rev=0;
 int rpm;
 int oldtime=0;
 int time;
+char v_no = "KA05MG3232";
 long randNumber;
 void sendsms (String phone_no1,float s);
 void sendsmsrto (String phone_no2,float s);
@@ -57,7 +58,7 @@ s=0;
 //Serial.print(rpm);
 //Serial.print("\n");
   lcd.setCursor(0,0);
-  lcd.print("KA05MG3232");
+  lcd.print(v_no);
   lcd.setCursor(0,1);
   lcd.print("SPEED=");
   lcd.print(s);
@@ -103,14 +104,14 @@ void sendsms(String phoneno,float s)
 
   
   
-  Serial.println("\nFor the Vehicle No. KA05MG3232");
+  Serial.println("\nFor the Vehicle No. ");
+  Serial.print(v_no);
   Serial.print("\nFound OVER SPEEDING at \n");
   Serial.print(s);
   Serial.print("Km/hr");
   Serial.print("\n");
-  gsm.print("\nFor the Vehicle No. KA05MG3232");
-  
-  
+  gsm.print("\nFor the Vehicle No. ");
+  gsm.print(v_no);
   gsm.print("\nFound OVER SPEEDING at ");
   gsm.print(s);
   gsm.print("Km/hr");
